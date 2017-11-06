@@ -1,0 +1,27 @@
+class Solution(object):
+    def reverseWords(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        a = s
+        #初始化两个空得list
+        re = []   
+        re1 = []
+        #将传进来的string按照空格分开成list中的元素
+        l = s.split()    
+        #统计list元素个数
+        k = len(l)
+        n = 0
+        #对l中的每个元素开始作用
+        for n in range(k):
+            #将第n个元素赋值给re
+            re = l[n]
+            #将元素进行倒序处理
+            re = re[::-1]
+            #将倒序后的元素附到re1这个lsit中，重复n个元素都进行这一系列操作
+            re1.append(re)
+        #将倒序处理好的list元素以空格为分隔符组合起来成为完整的string
+        s = ' '.join(re1)
+        return s
+                
